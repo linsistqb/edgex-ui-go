@@ -38,7 +38,7 @@ const (
 	VendorsPath               = "/vendors"
 	DataPathPrefix            = "/data"
 	StaticDirName             = "test"
-	LoginUriPath              = "/api/v1/auth/test"
+	LoginUriPath              = "/api/v1/auth/login"
 	LoginHtmlPage             = "/test.html"
 	NoAuthorizationMsg        = "no authorization."
 	AjaxRequestIdentifier     = "XMLHttpRequest"
