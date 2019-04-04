@@ -31,6 +31,9 @@ const (
 	PasswordKey = "password"
 )
 
+func Test(w http.ResponseWriter, r *http.Request) {
+	defer r.Body.Close()
+}
 func Login(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 

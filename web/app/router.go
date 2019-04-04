@@ -27,6 +27,8 @@ func InitRestRoutes() http.Handler {
 	r := mux.NewRouter()
 
 	s := r.PathPrefix("/api/v1").Subrouter()
+    s.HandleFunc("/auth/test", controller.Test).Methods(http.MethodPost)
+    
 	s.HandleFunc("/auth/login", controller.Login).Methods(http.MethodPost)
 	s.HandleFunc("/auth/logout", controller.Logout).Methods(http.MethodGet)
 
