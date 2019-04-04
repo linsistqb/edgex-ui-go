@@ -29,7 +29,7 @@ func InitRestRoutes() http.Handler {
 	s := r.PathPrefix("/api/v1").Subrouter()
     s.HandleFunc("/auth/test", controller.Test).Methods(http.MethodPost)
 //	s.HandleFunc("/auth/login", controller.Login).Methods(http.MethodPost)
-	s.HandleFunc("/auth/logout", controller.Logout).Methods(http.MethodGet)
+//	s.HandleFunc("/auth/logout", controller.Logout).Methods(http.MethodGet)
 
 	s.HandleFunc("/gateway", controller.QueryAllGateway).Methods(http.MethodGet)
 	s.HandleFunc("/gateway", controller.AddGateway).Methods(http.MethodPost)
