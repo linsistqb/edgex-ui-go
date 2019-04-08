@@ -65,36 +65,20 @@ $(document).ready(function() {
 
 function test(data)
 {
-   alert("button click  hello "+ $data); 
+   alert("button click  hello "+ data); 
 }
 
 $(document).ready( function() {
-/*
-    $(".myself_form button").on('click', function(data) {
-        test(data);
+    $(".ip_form button").on('click', function() {
+        test("ip_form");
     });
-*/
 
-    $(".btn_submit").click(function(){
-        test("btn_submit");
-    });
-    
-    $(".btn_get").click(function(){
-        test("btn_get");
-    });
-    
-    $(".btn_post").click(function(){
-        test("btn_post");
-    });
-    
-    $(".btn_delete").click(function(){
-        test("btn_delete");
-    });
-    
-    $(".btn_put").click(function(){
-        test("btn_put");
-    });        
+    $(".postman button").on('click', function() {
+        test("postman");
+    }); 
 });
+
+
 
 
 
