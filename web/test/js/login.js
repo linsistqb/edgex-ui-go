@@ -13,7 +13,7 @@
  *
  * @author: Huaqiao Zhang, <huaqiaoz@vmware.com>
  *******************************************************************************/
- 
+/* 
 function login() {
     var name = $("#userName").val();
     var pwd = $("#userPwd").val();
@@ -60,4 +60,16 @@ $(document).ready(function() {
             login();
         }
     }, false);
+});
+*/
+
+function test()
+{
+   alert("button click!!!"); 
+}
+
+$(document).ready( function() {
+    $(".myself_form button").on('click', function() {
+        test();
+    });
 });
