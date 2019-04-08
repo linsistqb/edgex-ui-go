@@ -70,13 +70,17 @@ function test(data)
 
 $(document).ready( function() {
     $(".myself_form button#btn_submit").on('click', function() {
-        test("btn_submit");
+        alert("message btn_submit");
 
     });
 
     $(".div_restful button").on('click', function() {
-        test("div_restful");
+        alert("message  div_restful");
     }); 
+    
+    $("#btn_put").on('click',function(){
+        alert("message btn_put");
+    });
 });
 
 
