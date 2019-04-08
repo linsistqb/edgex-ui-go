@@ -65,16 +65,17 @@ $(document).ready(function() {
 
 function test(data)
 {
-   alert("button click  hello "+ data); 
+   alert("message "+ data); 
 }
 
 $(document).ready( function() {
-    $(".ip_form button").on('click', function() {
-        test("ip_form");
+    $(".myself_form button#btn_submit").on('click', function() {
+        test("btn_submit");
+
     });
 
-    $(".postman button").on('click', function() {
-        test("postman");
+    $(".div_restful button").on('click', function() {
+        test("div_restful");
     }); 
 });
 
