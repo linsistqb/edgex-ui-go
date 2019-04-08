@@ -71,9 +71,9 @@ function test(data)
 $(document).ready( function() {
     $(".myself_form button#btn_submit").on('click', function() {
         
-        var ip_input = $("#input_ip").val();
+       var ip_input = $("#input_ip").val();
         
-       alert("message btn_submit"+ IP);
+       alert("message btn_submit" + ip_input);
        
         $.ajax({
             url: '/api/v1/auth/login',

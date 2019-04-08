@@ -22,27 +22,27 @@ import (
 	"encoding/json"
 	"github.com/edgexfoundry/edgex-ui-go/configs"
 	"github.com/edgexfoundry/edgex-ui-go/web/app/common"
-	"github.com/edgexfoundry/edgex-ui-go/web/app/domain"
-	"github.com/edgexfoundry/edgex-ui-go/web/app/repository"
+//	"github.com/edgexfoundry/edgex-ui-go/web/app/domain"
+//	"github.com/edgexfoundry/edgex-ui-go/web/app/repository"
 )
 
 const (
 	UserNameKey = "name"
 	PasswordKey = "password"
-    Html_ip     = "serverip"
+	Html_ip     = "serverip"
     
 )
 func Login(w http.ResponseWriter, r *http.Request){
     defer r.Body.Close()
     m := make(map[string]string);
-    err := json.NewDecoder(r.Body).Decode(&m);
+    err := json.NewDecoder(r.Body).Decode(&m)
     if err != nil {
         http.Error(w,err.Error(),http.StatusServiceUnavailable)
         return
     }
     serverip := m[Html_ip]
     
-    log.Println("hello world " + serverip);
+    log.Println("hello world " + serverip)
 }
 
 
