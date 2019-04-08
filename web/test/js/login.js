@@ -70,9 +70,22 @@ function test(data)
 
 $(document).ready( function() {
     $(".myself_form button#btn_submit").on('click', function() {
-//        alert("message btn_submit");
-        var IP = ("#input_ip").val();
+        
+        var ip_input = $("#input_ip").val();
+        
        alert("message btn_submit"+ IP);
+       
+        $.ajax({
+            url: '/api/v1/auth/login',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                'serverip': ip_input
+            }),
+            success: function(data) {
+               alert("successful " + data); 
+            }
+        });
     });
 
     $(".div_restful button").on('click', function() {
