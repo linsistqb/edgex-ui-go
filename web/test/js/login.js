@@ -70,17 +70,19 @@ function test(data)
 
 $(document).ready( function() {
     $(".myself_form button#btn_submit").on('click', function() {
-        alert("message btn_submit");
-
+//        alert("message btn_submit");
+        var IP = ("#input_ip").val();
+       alert("message btn_submit"+ IP);
     });
 
     $(".div_restful button").on('click', function() {
         alert("message  div_restful");
     }); 
-    
+/*    
     $("#btn_put").on('click',function(){
         alert("message btn_put");
     });
+*/
 });
 
 
