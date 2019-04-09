@@ -24,8 +24,7 @@ $(document).ready(function(){
 		headers:{"X-Session-Token":window.sessionStorage.getItem("X_Session_Token")},
 		statusCode: {
 			302: function() {
-//				window.location.href='/login.html?ran='+Math.random(); //prevent browser cache result to redirect  failed.
-				window.location.href='/test.html?ran='+Math.random(); //prevent browser cache result to redirect  failed.
+				window.location.href='/login.html?ran='+Math.random(); //prevent browser cache result to redirect  failed.
 			}
 		}
 	});
