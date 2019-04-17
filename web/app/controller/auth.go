@@ -43,7 +43,7 @@ func Login(w http.ResponseWriter, r *http.Request){
     serverip := m[Html_ip]
     
     log.Println("hello world " + serverip)
-    w.Write("web backend obtain successful!!!!")
+    w.Write([]byte("web backend obtain successful!!!!"))
 }
 
 
