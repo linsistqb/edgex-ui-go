@@ -29,7 +29,7 @@ import (
 
 const (
 	HostIPKey = "hostIP"
-    Html_ip     = "serverip"
+//	Html_ip     = "serverip"
 )
 
 func ProxyConfigGateway(w http.ResponseWriter, r *http.Request) {
@@ -48,8 +48,8 @@ func AddGateway(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 	var g domain.Gateway
 	err := json.NewDecoder(r.Body).Decode(&g)
-    serviceip := g[Html_ip]
-    log.Println("gateway.go line 50 " + serviceip)
+//   	serviceip := g[Html_ip]
+    	log.Println("gateway.go line 50 ")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusServiceUnavailable)
 		return
