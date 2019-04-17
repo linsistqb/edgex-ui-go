@@ -32,7 +32,7 @@ const (
 	Html_ip     = "serverip"
     
 )
-func Login(w http.ResponseWriter, r *http.Request){
+func Login(w http.ResponseWriter, r *http.Request)(string){
     defer r.Body.Close()
     m := make(map[string]string);
     err := json.NewDecoder(r.Body).Decode(&m)
