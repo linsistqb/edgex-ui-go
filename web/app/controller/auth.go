@@ -22,8 +22,8 @@ import (
 	"encoding/json"
 	"github.com/edgexfoundry/edgex-ui-go/configs"
 	"github.com/edgexfoundry/edgex-ui-go/web/app/common"
-//	"github.com/edgexfoundry/edgex-ui-go/web/app/domain"
-//	"github.com/edgexfoundry/edgex-ui-go/web/app/repository"
+	"github.com/edgexfoundry/edgex-ui-go/web/app/domain"
+	"github.com/edgexfoundry/edgex-ui-go/web/app/repository"
 )
 
 const (
@@ -32,6 +32,7 @@ const (
 	Html_ip     = "serverip"
     
 )
+/*
 func Login(w http.ResponseWriter, r *http.Request){
     defer r.Body.Close()
     m := make(map[string]string);
@@ -45,7 +46,7 @@ func Login(w http.ResponseWriter, r *http.Request){
     log.Println("hello world " + serverip)
     w.Write([]byte("web backend obtain successful!!!!"))
 }
-
+*/
 
 /*
 func Login(w http.ResponseWriter, r *http.Request) {
@@ -77,6 +78,20 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	}
 }
 */
+
+func Login(w http.ResponseWriter, r *http.Request) {
+	defer r.Body.Close()
+	var g domain.Gateway
+	err := json.NewDecoder(r.Body).Decode(&g)
+   	serviceip := g[Html_ip]
+    log.Println("gateway.go line 50 ")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusServiceUnavailable)
+		return
+	}
+	repository.GetGatewayRepos().Insert(&g)
+    log.Println("GateWay insert successsful！！！！")
+}
 
 func Logout(w http.ResponseWriter, r *http.Request) {
 	token := r.Header.Get(configs.SessionTokenKey)
