@@ -63,12 +63,36 @@ $(document).ready(function() {
 });
 */
 
-function test(data)
+function testLog(data)
 {
-   alert("message "+ data); 
+   alert("log "+ data); 
 }
 
+
 $(document).ready( function() {
+
+    $(".myself_form button#btn_submit").on('click',function(){
+        var ip_input = $('#input_ip').val();
+        testLog(ip_input);
+        
+        var newGateways = {}
+		newGateways["name"] = " ";
+		newGateways["description"] = " ";
+		newGateways["address"] = $("#input_ip").val();
+        
+        $.ajax({
+            url:'api/v1/gateway'
+            type:'POST'
+            contentType:'application/json'
+            data:JSON.stringifg({
+                'addServerip':ip_input
+            }),
+            success:function(data){
+               testLog(data); 
+            }
+        });
+    });
+/*
     $(".myself_form button#btn_submit").on('click', function() {
         
        var ip_input = $("#input_ip").val();
@@ -79,17 +103,19 @@ $(document).ready( function() {
             url: '/api/v1/auth/login',
             type: 'POST',
             contentType: 'application/json',
-/*
-            data: JSON.stringify({
-                'serverip': ip_input
-            })，
-*/
+//            data: JSON.stringify({
+//               'serverip': ip_input
+//            })，
             data:JSON.stringify(param),
             success: function(data) {
                alert("successful " + data); 
+               
             }
         });
     });
+    
+*/  
+    
 /*
     $(".div_restful button").on('click', function() {
         alert("message  div_restful");

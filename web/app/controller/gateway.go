@@ -17,6 +17,7 @@
 package controller
 
 import (
+    "log"
 	"net/http"
 	"encoding/json"
 	mux "github.com/gorilla/mux"
@@ -46,11 +47,13 @@ func AddGateway(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 	var g domain.Gateway
 	err := json.NewDecoder(r.Body).Decode(&g)
+    log.Println("gateway.go line 50 " + g)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusServiceUnavailable)
 		return
 	}
 	repository.GetGatewayRepos().Insert(&g)
+    log.Println("GateWay insert successsful！！！！")
 }
 
 func QueryAllGateway(w http.ResponseWriter, r *http.Request) {
