@@ -75,18 +75,16 @@ $(document).ready( function() {
         var ip_input = $('#input_ip').val();
         testLog(ip_input);
         
-        var newGateways = {}
-		newGateways["name"] = " ";
-		newGateways["description"] = " ";
-		newGateways["address"] = $("#input_ip").val();
+        var newGateways = {};
+	newGateways["name"] = " ";
+	newGateways["description"] = " ";
+	newGateways["address"] = $("#input_ip").val();
         
         $.ajax({
             url:'/api/v1/auth/login',
             type:'POST',
             contentType:'application/json',
-            data:JSON.stringify({
-                'addServerip':ip_input
-            }),
+            data:JSON.stringify(newGateways),
             success:function(data){
                testLog(data); 
             }
