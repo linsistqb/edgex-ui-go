@@ -74,9 +74,9 @@ $(document).ready( function() {
        var ip_input = $("#input_ip").val();
         
        alert("message btn_submit" + ip_input);
-        var param = {"hostIP":ip_input};      
+        var param = {"serverip":ip_input};      
         $.ajax({
-            url: '/api/v1/gateway/proxy',
+            url: '/api/v1/auth/login',
             type: 'POST',
             contentType: 'application/json',
 /*
