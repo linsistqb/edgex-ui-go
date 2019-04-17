@@ -81,10 +81,10 @@ $(document).ready( function() {
 		newGateways["address"] = $("#input_ip").val();
         
         $.ajax({
-            url:'/api/v1/gateway'
-            type:'POST'
-            contentType:'application/json'
-            data:JSON.stringifg({
+            url:'/api/v1/gateway',
+            type:'POST',
+            contentType:'application/json',
+            data:JSON.stringify({
                 'addServerip':ip_input
             }),
             success:function(data){
