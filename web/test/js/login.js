@@ -74,24 +74,27 @@ $(document).ready( function() {
        var ip_input = $("#input_ip").val();
         
        alert("message btn_submit" + ip_input);
-       
+        var param = {"hostIP":ip_input};      
         $.ajax({
-            url: '/api/v1/auth/login',
+            url: '/api/v1/gateway/proxy',
             type: 'POST',
             contentType: 'application/json',
+/*
             data: JSON.stringify({
                 'serverip': ip_input
-            }),
+            })，
+*/
+            data:JSON.stringify(param),
             success: function(data) {
                alert("successful " + data); 
             }
         });
     });
-
+/*
     $(".div_restful button").on('click', function() {
         alert("message  div_restful");
     }); 
-/*    
+    
     $("#btn_put").on('click',function(){
         alert("message btn_put");
     });
