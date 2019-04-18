@@ -34,6 +34,7 @@ const (
 
 func ProxyConfigGateway(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
+    log.Println("gateway proconfiggateway successful")
 	m := make(map[string]string)
 	err := json.NewDecoder(r.Body).Decode(&m)
 	if err != nil {
