@@ -94,14 +94,14 @@ $(document).ready( function() {
     
     $(".myself_form button#btn_get").on('click',function(){
         var ip_input = $('#input_ip').val();
+	var datavalue = {};
+	datavalue["hostIP"] =ip_input;
         testLog("btn_get  press down!!!!"); 
         $.ajax({
-            url:'/api/v1/auth/addGateway',
+            url:'/api/v1/addGateway',
             type:'POST',
             contentType:'application/json',
-            data:JSON.stringify({
-                'hostIP':ip_input
-            }),
+            data:JSON.stringify(datavalue),
             success:function(data){
                 testLog("auth/addGateway  successful"); 
             }
@@ -109,11 +109,11 @@ $(document).ready( function() {
     
     });
     
-    $(".myself_form button#btn_get").on('click',function(){
+    $(".myself_form button#btn_post").on('click',function(){
         var ip_input = $('#input_ip').val();
-        testLog("btn_get  press down!!!!"); 
+        testLog("btn_post  press down!!!!"); 
         $.ajax({
-            url:'/api/v1/auth/proxy',
+            url:'/api/v1/proxy',
             type:'POST',
             contentType:'application/json',
             data:JSON.stringify({
