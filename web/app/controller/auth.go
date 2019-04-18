@@ -84,11 +84,8 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	var g domain.Gateway
 	err := json.NewDecoder(r.Body).Decode(&g)
 //   	serviceip := g[address]
-<<<<<<< HEAD
-    log.Println("gateway.go line 1000 ")
-=======
+
     log.Println("controller/auth.js 87 ")
->>>>>>> d24bd540e2466a8999000fb0a6b25ded4d8a19a1
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusServiceUnavailable)

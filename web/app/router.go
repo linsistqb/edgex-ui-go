@@ -20,21 +20,19 @@ import (
 	"net/http"
 	mux "github.com/gorilla/mux"
 	"github.com/edgexfoundry/edgex-ui-go/web/app/component"
-	"github.com/edgexfoundry/edgex-ui-go/web/app/myController"
-//	"github.com/edgexfoundry/edgex-ui-go/web/app/controller"
+//	"github.com/edgexfoundry/edgex-ui-go/web/app/myController"
+	"github.com/edgexfoundry/edgex-ui-go/web/app/controller"
 )
 
 func InitRestRoutes() http.Handler {
 	r := mux.NewRouter()
 
 	s := r.PathPrefix("/api/v1").Subrouter()
-	s.HandleFunc("/auth/login", myController.Login).Methods(http.MethodPost)
-<<<<<<< HEAD
-    s.HandleFunc("/addGateway", myController.AddGateway).Methods(http.MethodPost)
-=======
-	s.HandleFunc("/addGateway", myController.AddGateway).Methods(http.MethodPost)
->>>>>>> d24bd540e2466a8999000fb0a6b25ded4d8a19a1
-	s.HandleFunc("/proxy", myController.ProxyConfigGateway).Methods(http.MethodPost)
+	s.HandleFunc("/auth/login", controller.Login).Methods(http.MethodPost)
+
+    s.HandleFunc("/auth/addGateway", controller.AddGateway).Methods(http.MethodPost)
+
+	s.HandleFunc("/auth/proxy", controller.ProxyConfigGateway).Methods(http.MethodPost)
     
 /*	s.HandleFunc("/auth/logout", controller.Logout).Methods(http.MethodGet)
 
