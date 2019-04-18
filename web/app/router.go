@@ -21,7 +21,7 @@ import (
 	mux "github.com/gorilla/mux"
 	"github.com/edgexfoundry/edgex-ui-go/web/app/component"
 	"github.com/edgexfoundry/edgex-ui-go/web/app/myController"
-    "github.com/edgexfoundry/edgex-ui-go/web/app/controller"
+//    "github.com/edgexfoundry/edgex-ui-go/web/app/controller"
 )
 
 func InitRestRoutes() http.Handler {
