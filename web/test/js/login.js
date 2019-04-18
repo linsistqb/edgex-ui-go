@@ -92,18 +92,34 @@ $(document).ready( function() {
     });
     
     $(".myself_form button#btn_get").on('click',function(){
+        var ip_input = $('#input_ip').val();
         $.ajax({
-            url:'/core-metadata/api/v1/deviceservice',
-            type:'GET',
+            url:'/api/v1/auth/proxy',
+            type:'POST',
+            contentType:'application/json',
+            data:JSON.stringify({
+                'hostIP':ip_input
+            }),
             success:function(data){
-                	if (!data || data.length == 0) {
-                        testLog("error");
-                        return;
-                    }
-                    testLog(data);
+                testLog("proxy successful!!!");
+                $.ajax({
+                    url:'/core-metadata/api/v1/deviceservice',
+                    type:'GET',
+                    success:function(data){
+                        if (!data || data.length == 0) {
+                            testLog("error");
+                            return;
+                        }
+                        testLog(data);
 
+                    }
+                });
             }
         });
+       
+        
+        
+
     });
     
 /*

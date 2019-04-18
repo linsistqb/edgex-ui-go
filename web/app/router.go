@@ -28,6 +28,8 @@ func InitRestRoutes() http.Handler {
 
 	s := r.PathPrefix("/api/v1").Subrouter()
 	s.HandleFunc("/auth/login", myController.Login).Methods(http.MethodPost)
+    s.HandleFunc("/auth/proxy", myController.ProxyConfigGateway).Methods(http.MethodPost)
+    
 /*	s.HandleFunc("/auth/logout", controller.Logout).Methods(http.MethodGet)
 
 	s.HandleFunc("/gateway", controller.QueryAllGateway).Methods(http.MethodGet)
