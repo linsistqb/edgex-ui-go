@@ -21,7 +21,7 @@ import (
 	mux "github.com/gorilla/mux"
 	"github.com/edgexfoundry/edgex-ui-go/web/app/component"
 	"github.com/edgexfoundry/edgex-ui-go/web/app/myController"
-	"github.com/edgexfoundry/edgex-ui-go/web/app/controller"
+//	"github.com/edgexfoundry/edgex-ui-go/web/app/controller"
 )
 
 func InitRestRoutes() http.Handler {
@@ -29,8 +29,8 @@ func InitRestRoutes() http.Handler {
 
 	s := r.PathPrefix("/api/v1").Subrouter()
 	s.HandleFunc("/auth/login", myController.Login).Methods(http.MethodPost)
-    s.HandleFunc("/auth/addGateway", myController.AddGateway).Methods(http.MethodPost)
-	s.HandleFunc("/auth/proxy", myController.ProxyConfigGateway).Methods(http.MethodPost)
+    s.HandleFunc("/addGateway", myController.AddGateway).Methods(http.MethodPost)
+	s.HandleFunc("/proxy", myController.ProxyConfigGateway).Methods(http.MethodPost)
     
 /*	s.HandleFunc("/auth/logout", controller.Logout).Methods(http.MethodGet)
 

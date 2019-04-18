@@ -84,7 +84,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	var g domain.Gateway
 	err := json.NewDecoder(r.Body).Decode(&g)
 //   	serviceip := g[address]
-    log.Println("gateway.go line 50 ")
+    log.Println("gateway.go line 1000 ")
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusServiceUnavailable)
@@ -93,6 +93,34 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	repository.GetGatewayRepos().Insert(&g)
     log.Println("GateWay insert successsful！！！！")
 }
+
+func AddGateway(w http.ResponseWriter, r *http.Request) {
+	defer r.Body.Close()
+	var g domain.Gateway
+	err := json.NewDecoder(r.Body).Decode(&g)
+    	log.Println("auth.go  AddGateway line 102")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusServiceUnavailable)
+		return
+	}
+	repository.GetGatewayRepos().Insert(&g)
+    log.Println("auth.go  AddGateway  insert successsful！！！！")
+}
+
+
+func ProxyConfigGateway(w http.ResponseWriter, r *http.Request) {
+	defer r.Body.Close()
+    log.Println("hello ProxyConfigGateway!!!!");
+	m := make(map[string]string)
+	err := json.NewDecoder(r.Body).Decode(&m)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusServiceUnavailable)
+		return
+	}
+	targetIP := m[HostIPKey]
+	common.DynamicalProxyCache[r.Header.Get(configs.SessionTokenKey)] = targetIP
+}
+
 
 func Logout(w http.ResponseWriter, r *http.Request) {
 	token := r.Header.Get(configs.SessionTokenKey)
