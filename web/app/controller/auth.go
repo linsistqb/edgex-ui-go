@@ -84,14 +84,15 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	var g domain.Gateway
 	err := json.NewDecoder(r.Body).Decode(&g)
 //   	serviceip := g[address]
-    log.Println("gateway.go line 50 ")
+    log.Println("controller/auth.js 87 ")
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusServiceUnavailable)
 		return
 	}
 	repository.GetGatewayRepos().Insert(&g)
-    log.Println("GateWay insert successsful！！！！")
+    log.Println("control/auth.js GateWay insert successsful！！！！")
+
 }
 
 func Logout(w http.ResponseWriter, r *http.Request) {
