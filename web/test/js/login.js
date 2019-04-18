@@ -75,18 +75,25 @@ $(document).ready( function() {
         var ip_input = $('#input_ip').val();
         testLog(ip_input);
         
-        var newGateways = {}
-		newGateways["name"] = " ";
-		newGateways["description"] = " ";
-		newGateways["address"] = $("#input_ip").val();
+        var newGateways = {};
+	newGateways["name"] = " ";
+	newGateways["description"] = " ";
+	newGateways["address"] = $("#input_ip").val();
         
         $.ajax({
+<<<<<<< HEAD
             url:'/api/v1/gateway',
             type:'POST',
             contentType:'application/json',
             data:JSON.stringify({
                 'addServerip':ip_input
             }),
+=======
+            url:'/api/v1/auth/login',
+            type:'POST',
+            contentType:'application/json',
+            data:JSON.stringify(newGateways),
+>>>>>>> 41734e01be1dbbb89024e92321011b139b83095c
             success:function(data){
                testLog(data); 
             }
