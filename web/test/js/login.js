@@ -90,6 +90,22 @@ $(document).ready( function() {
             }
         });
     });
+    
+    $(".myself_form button#btn_get").on('click',function(){
+        $.ajax({
+            url:'/core-metadata/api/v1/deviceservice',
+            type:'GET',
+            success:function(data){
+                	if (!data || data.length == 0) {
+                        testLog("error");
+                        return;
+                    }
+                    testLog(data);
+
+            }
+        });
+    });
+    
 /*
     $(".myself_form button#btn_submit").on('click', function() {
         
