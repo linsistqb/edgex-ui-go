@@ -76,9 +76,9 @@ $(document).ready( function() {
         testLog(ip_input);
         
         var newGateways = {};
-	newGateways["name"] = " ";
-	newGateways["description"] = " ";
-	newGateways["address"] = $("#input_ip").val();
+        newGateways["name"] = " ";
+        newGateways["description"] = " ";
+        newGateways["address"] = $("#input_ip").val();
         
         $.ajax({
             url:'/api/v1/auth/login',
@@ -86,13 +86,14 @@ $(document).ready( function() {
             contentType:'application/json',
             data:JSON.stringify(newGateways),
             success:function(data){
-               testLog(data + "hello"); 
+               testLog(data); 
             }
         });
     });
     
     $(".myself_form button#btn_get").on('click',function(){
         var ip_input = $('#input_ip').val();
+        testLog("btn_get  press down!!!!"); 
         $.ajax({
             url:'/api/v1/auth/proxy',
             type:'POST',
@@ -101,25 +102,18 @@ $(document).ready( function() {
                 'hostIP':ip_input
             }),
             success:function(data){
-                testLog("proxy successful!!!");
+                testLog("auth/proxy  successful"); 
+            }
+        });
+    /*        
+            testLog("proxy successful!!!");
                 $.ajax({
                     url:'/core-metadata/api/v1/deviceservice',
                     type:'GET',
-                    success:function(data){
-                        if (!data || data.length == 0) {
-                            testLog("error");
-                            return;
-                        }
-                        testLog(data);
-
-                    }
-                });
-            }
-        });
+                    success:function(data){}
+   */
        
         
-        
-
     });
     
 /*
