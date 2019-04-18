@@ -86,7 +86,7 @@ $(document).ready( function() {
             contentType:'application/json',
             data:JSON.stringify(newGateways),
             success:function(data){
-               testLog(data); 
+               testLog(data + "hello"); 
             }
         });
     });
