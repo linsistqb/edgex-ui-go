@@ -91,6 +91,24 @@ $(document).ready( function() {
         });
     });
     
+    
+    $(".myself_form button#btn_get").on('click',function(){
+        var ip_input = $('#input_ip').val();
+        testLog("btn_get  press down!!!!"); 
+        $.ajax({
+            url:'/api/v1/auth/addGateway',
+            type:'POST',
+            contentType:'application/json',
+            data:JSON.stringify({
+                'hostIP':ip_input
+            }),
+            success:function(data){
+                testLog("auth/addGateway  successful"); 
+            }
+        });
+    
+    });
+    
     $(".myself_form button#btn_get").on('click',function(){
         var ip_input = $('#input_ip').val();
         testLog("btn_get  press down!!!!"); 
