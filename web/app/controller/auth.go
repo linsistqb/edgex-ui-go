@@ -33,21 +33,6 @@ const (
     HostIPKey = "hostIP"
     
 )
-/*
-func Login(w http.ResponseWriter, r *http.Request){
-    defer r.Body.Close()
-    m := make(map[string]string);
-    err := json.NewDecoder(r.Body).Decode(&m)
-    if err != nil {
-        http.Error(w,err.Error(),http.StatusServiceUnavailable)
-        return 
-    }
-    serverip := m[Html_ip]
-    
-    log.Println("hello world " + serverip)
-    w.Write([]byte("web backend obtain successful!!!!"))
-}
-*/
 
 /*
 func Login(w http.ResponseWriter, r *http.Request) {
