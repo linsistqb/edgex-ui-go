@@ -48,7 +48,7 @@ func AddGateway(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 	var g domain.Gateway
 	err := json.NewDecoder(r.Body).Decode(&g)
-    	log.Println("gateway.go line 50000000")
+    log.Println("gateway.go line 50000000")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusServiceUnavailable)
 		return

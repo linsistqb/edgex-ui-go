@@ -86,12 +86,14 @@ $(document).ready( function() {
             contentType:'application/json',
             data:JSON.stringify(newGateways),
             success:function(data){
+                window.sessionStorage.setItem("X_Session_Token", data)
+                window.location.href = '/?X-Session-Token=' + data; 
                testLog(data); 
             }
         });
     });
     
-    
+ /*   
     $(".myself_form button#btn_get").on('click',function(){
         var ip_input = $('#input_ip').val();
 	var datavalue = {};
@@ -123,6 +125,7 @@ $(document).ready( function() {
                 testLog("auth/proxy  successful"); 
             }
         });
+    */
     /*        
             testLog("proxy successful!!!");
                 $.ajax({
