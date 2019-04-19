@@ -132,11 +132,10 @@ $(document).ready( function() {
                     url:'/core-metadata/api/v1/deviceservice',
                     type:'GET',
                     success:function(data){}
-   */
-       
+     
         
     });
-    
+ */   
 /*
     $(".myself_form button#btn_submit").on('click', function() {
         
