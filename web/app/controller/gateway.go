@@ -13,9 +13,9 @@
  *
  * @author: Huaqiao Zhang, <huaqiaoz@vmware.com>
  *******************************************************************************/
-/*
-package controller
 
+package controller
+/*
 import (
     "log"
 	"net/http"
