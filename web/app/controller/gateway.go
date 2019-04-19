@@ -13,7 +13,7 @@
  *
  * @author: Huaqiao Zhang, <huaqiaoz@vmware.com>
  *******************************************************************************/
-
+/*
 package controller
 
 import (
@@ -81,3 +81,5 @@ func RemoveGateway(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
+
+*/
