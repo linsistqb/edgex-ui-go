@@ -65,7 +65,7 @@ $(document).ready(function() {
 
 function testLog(data)
 {
-   alert("log "+ data); 
+   console.log("log "+ data); 
 }
 
 
