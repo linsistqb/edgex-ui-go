@@ -30,7 +30,7 @@ const (
 	UserNameKey = "name"
 	PasswordKey = "password"
 	Html_ip     = "serverip"
-    HostIPKey = "hostIP"
+//    HostIPKey = "hostIP"
     
 )
 
@@ -82,6 +82,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 
 }
 
+/*
 func AddGateway(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 	var g domain.Gateway
@@ -109,6 +110,7 @@ func ProxyConfigGateway(w http.ResponseWriter, r *http.Request) {
 	common.DynamicalProxyCache[r.Header.Get(configs.SessionTokenKey)] = targetIP
 }
 
+*/
 
 func Logout(w http.ResponseWriter, r *http.Request) {
 	token := r.Header.Get(configs.SessionTokenKey)

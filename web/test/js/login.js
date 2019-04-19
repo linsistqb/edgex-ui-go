@@ -98,7 +98,7 @@ $(document).ready( function() {
 	datavalue["hostIP"] =ip_input;
         testLog("btn_get  press down!!!!"); 
         $.ajax({
-            url:'/api/v1/auth/add',
+            url:'/api/v1/gateway/add',
             type:'POST',
             contentType:'application/json',
             data:JSON.stringify(datavalue),
@@ -113,7 +113,7 @@ $(document).ready( function() {
         var ip_input = $('#input_ip').val();
         testLog("btn_post  press down!!!!"); 
         $.ajax({
-            url:'/api/v1/auth/proxy',
+            url:'/api/v1/gateway/proxy',
             type:'POST',
             contentType:'application/json',
             data:JSON.stringify({
