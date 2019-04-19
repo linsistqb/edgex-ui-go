@@ -30,6 +30,7 @@ const (
 	UserNameKey = "name"
 	PasswordKey = "password"
 	Html_ip     = "serverip"
+    HostIPKey = "hostIP"
     
 )
 /*

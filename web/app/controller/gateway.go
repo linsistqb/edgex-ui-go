@@ -29,7 +29,6 @@ import (
 
 const (
 	HostIPKey = "hostIP"
-//	Html_ip     = "serverip"
 )
 
 func ProxyConfigGateway(w http.ResponseWriter, r *http.Request) {
