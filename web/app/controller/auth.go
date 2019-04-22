@@ -72,9 +72,10 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusServiceUnavailable)
 		return
 	}
-	IP := m[HostIPKey]
+    
+	name := m[UserNameKey]
 	pwd := m[PasswordKey]
-/*
+
 	u := domain.User{Name: name, Password: pwd}
 	ok, err := repository.GetUserRepos().ExistsUser(u)
 
@@ -83,7 +84,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("log failed : " + err.Error()))
 		return
 	}
-*/
+
 	
 		token := common.GetMd5String(IP)
 		common.TokenCache[token] = u
