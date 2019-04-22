@@ -29,11 +29,10 @@ func InitRestRoutes() http.Handler {
 	s := r.PathPrefix("/api/v1").Subrouter()
 	s.HandleFunc("/auth/login", controller.Login).Methods(http.MethodPost)
 
-    s.HandleFunc("/gateway/add", controller.AddGateway).Methods(http.MethodPost)
-
-	s.HandleFunc("/gateway/proxy", controller.ProxyConfigGateway).Methods(http.MethodPost)
+//  s.HandleFunc("/gateway/add", controller.AddGateway).Methods(http.MethodPost)
+//	s.HandleFunc("/gateway/proxy", controller.ProxyConfigGateway).Methods(http.MethodPost)
     
-/*	s.HandleFunc("/auth/logout", controller.Logout).Methods(http.MethodGet)
+	s.HandleFunc("/auth/logout", controller.Logout).Methods(http.MethodGet)
 
 	s.HandleFunc("/gateway", controller.QueryAllGateway).Methods(http.MethodGet)
 	s.HandleFunc("/gateway", controller.AddGateway).Methods(http.MethodPost)
@@ -43,7 +42,7 @@ func InitRestRoutes() http.Handler {
 	s.HandleFunc("/exportshow", controller.ExportShow).Methods(http.MethodPost)
 
 	s.HandleFunc("/profile/download", controller.DowloadProfile).Methods(http.MethodGet)
-*/
+
 	s1 := r.PathPrefix("").Subrouter()
 	s1.HandleFunc("/ws", component.WebSocketHandler)
 
