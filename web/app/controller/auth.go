@@ -86,9 +86,9 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	
-		token := common.GetMd5String(IP)
+		token := common.GetMd5String(name)
 		common.TokenCache[token] = u
-		log.Println("User: " + IP + " login.")
+		log.Println("User: " + name + " login.")
 		w.Write([]byte(token))
 	
     
