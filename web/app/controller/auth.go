@@ -70,6 +70,8 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	var g domain.Gateway
 	err := json.NewDecoder(r.Body).Decode(&g)
 //   	serviceip := g[address]
+	name := m[UserNameKey]
+	pwd := m[PasswordKey]
 
     log.Println("controller/auth.js 87 ")
 
