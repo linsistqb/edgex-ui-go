@@ -78,7 +78,7 @@ $(document).ready( function() {
         var newGateways = {};
         newGateways["name"] = " ";
         newGateways["description"] = " ";
-        newGateways["address"] = $("#input_ip").val();
+        newGateways["hostIP"] = $("#input_ip").val();
         
         $.ajax({
             url:'/api/v1/auth/login',
