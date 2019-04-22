@@ -77,7 +77,13 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusServiceUnavailable)
 		return
 	}
-	repository.GetGatewayRepos().Insert(&g)
+    
+    token := common.GetMd5String(name)
+    common.TokenCache[token] = u
+	log.Println("User: " + name + " login.")
+	w.Write([]byte(token))
+    
+//	repository.GetGatewayRepos().Insert(&g)
     log.Println("control/auth.js GateWay insert successsful！！！！")
 
 }
