@@ -110,7 +110,7 @@ func ProxyConfigGateway(w http.ResponseWriter, r *http.Request) {
 	common.DynamicalProxyCache[r.Header.Get(configs.SessionTokenKey)] = targetIP
 }
 
-*/
+
 
 func Logout(w http.ResponseWriter, r *http.Request) {
 	token := r.Header.Get(configs.SessionTokenKey)
