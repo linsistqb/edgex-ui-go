@@ -87,8 +87,19 @@ $(document).ready( function() {
             data:JSON.stringify(newGateways),
             success:function(data){
                 window.sessionStorage.setItem("X_Session_Token", data)
-                window.location.href = '/?X-Session-Token=' + data; 
-               testLog(data); 
+//              window.location.href = '/?X-Session-Token=' + data; 
+/*
+                $.ajaxSetup({
+                    cache:false,//prevent browser cache result to redirect  failed.
+                    headers:{"X-Session-Token":window.sessionStorage.getItem("X_Session_Token")},
+                    statusCode: {
+                        302: function() {
+                            window.location.href='/login.html?ran='+Math.random(); //prevent browser cache result to redirect  failed.
+                        }
+                    }
+                });
+*/  
+        testLog(data); 
             }
         });
     });
