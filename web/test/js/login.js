@@ -93,17 +93,17 @@ $(document).ready( function() {
         });
     });
     
- /*   
+    
     $(".myself_form button#btn_get").on('click',function(){
         var ip_input = $('#input_ip').val();
 	var datavalue = {};
 	datavalue["hostIP"] =ip_input;
         testLog("btn_get  press down!!!!"); 
         $.ajax({
-            url:'/api/v1/gateway/add',
-            type:'POST',
+            url:'/api/v1/auth/add',
+            type:'GET',
             contentType:'application/json',
-            data:JSON.stringify(datavalue),
+//           data:JSON.stringify(datavalue),
             success:function(data){
                 testLog("auth/addGateway  successful"); 
             }
@@ -115,7 +115,7 @@ $(document).ready( function() {
         var ip_input = $('#input_ip').val();
         testLog("btn_post  press down!!!!"); 
         $.ajax({
-            url:'/api/v1/gateway/proxy',
+            url:'/api/v1/auth/proxy',
             type:'POST',
             contentType:'application/json',
             data:JSON.stringify({
@@ -125,7 +125,7 @@ $(document).ready( function() {
                 testLog("auth/proxy  successful"); 
             }
         });
-    */
+    
     /*        
             testLog("proxy successful!!!");
                 $.ajax({
@@ -133,9 +133,9 @@ $(document).ready( function() {
                     type:'GET',
                     success:function(data){}
      
-        
+    */    
     });
- */   
+   
 /*
     $(".myself_form button#btn_submit").on('click', function() {
         

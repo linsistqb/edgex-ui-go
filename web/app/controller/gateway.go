@@ -15,7 +15,7 @@
  *******************************************************************************/
 
 package controller
-
+/*
 import (
     "log"
 	"net/http"
@@ -81,4 +81,4 @@ func RemoveGateway(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-
+*/
