@@ -80,16 +80,20 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	ok, err := repository.GetUserRepos().ExistsUser(u)
 
 	if err != nil {
-		log.Println("User: " + name + " login failed : " + err.Error())
+        log.Println("User: " + name + " login failed : " + err.Error())
 		w.Write([]byte("log failed : " + err.Error()))
-		return
+        log.Println("error !!!")
+//		return
 	}
-
-	
-		token := common.GetMd5String(name)
-		common.TokenCache[token] = u
-		log.Println("User: " + name + " login.")
-		w.Write([]byte(token))
+    
+	if ok {
+        log.Println("ok err !!!")
+    }
+    
+	token := common.GetMd5String(name)
+	common.TokenCache[token] = u
+	log.Println("User: " + name + " login.")
+	w.Write([]byte(token))
 	
     
     log.Println("controller auth.go  94")
